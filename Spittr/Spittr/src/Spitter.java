@@ -3,7 +3,7 @@ import java.util.List;
 
 
 public class Spitter{
-    private Long spitterId;
+    private Long id;
     private String username;
     private String password;
     private String email;
@@ -13,7 +13,6 @@ public class Spitter{
     List<String> spittles = new ArrayList<String>();
 
     public Spitter(String username, String firstname, String lastname, String email, String password){
-        this.spitterId = spitterId;
         this.username = username;
         this.firstname = firstname;
         this.lastname = lastname;
@@ -22,12 +21,17 @@ public class Spitter{
         this.spittles = new ArrayList<String>(); // Initialize empty list of Spittles
     }
 
-    public Long getspitterId() {
-        return spitterId;
+    public Spitter() {
+
     }
 
-    public void setspitterId(Long spitterId) {
-        this.spitterId = spitterId;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {
@@ -73,7 +77,7 @@ public class Spitter{
     @Override
     public String toString() {
         return "Spitter{" +
-                "spitterId=" + spitterId +
+                "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +

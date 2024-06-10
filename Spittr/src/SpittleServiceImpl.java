@@ -4,24 +4,28 @@ import java.util.List;
 
 public class SpittleServiceImpl implements SpittleService{
 
+    List<Spittle> spittles = new ArrayList<>();
+
     public Spittle createSpittle(Long id, String text, Date postedTime){
         Spittle xx = new Spittle(id, text, postedTime);
         return xx;
     }
 
     public Spittle addSpittle(Spittle spittle, Spitter spitter) {
-        List<Spittle> spittles = new ArrayList<>();
-        String thisText = spittle.getText();
-        for ( Spittle s : spittles ) {
-            spittles.add(spittle);
-        }
-        return spittle;
+            this.spittles.add(spittle);
+        return (Spittle) spittles;
     }
 
-    public deleteSpittle(long id, Spitter spitter) {
-        List<Spittle> spittles = new ArrayList<>();
-        for ( Spittle s : spittles ) {
-            spittles.remove(Spittle spittle);
+    public void deleteSpittle(long id, List spittles, Spittle spittle) {
+        Spittle spittleToDelete = null;
+        for (Spittle spittle : spittles) {
+            if (spittle.getId().equals(id)) {
+                spittleToDelete = spittle;
+                break;
+            }
+        }
+        if (spittleToDelete != null) {
+            spittles.remove(spittleToDelete);
         }
     }
 }

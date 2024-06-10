@@ -4,7 +4,7 @@ public interface SpitterService {
 
     Spitter addSpitter(String username, String firstname, String lastname, String email, String password);
 
-    Spitter updateSpitter(Long spitterId, String newFirstName, String newLastName);
+    Spitter updateSpitter(Long id, String newFirstName, String newLastName);
 
     List<Spitter> getAllUsers();
 
